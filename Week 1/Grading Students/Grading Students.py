@@ -15,23 +15,21 @@ import sys
 
 def gradingStudents(grades):
     # Write your code here
-    final = []
+    answer = []
     for i in range(0,len(grades)):
-        if grades[i] < 38:
-            final.append(grades[i])
-        elif grades[i]%5 == 0:
-            final.append(grades[i])
+        if(grades[i]<38):
+            answer.append(grades[i])
         else:
             num = grades[i]
-            while(num%5 != 0):
-                num = num + 1 
-            if(num - grades[i] < 3):
-                final.append(num)
+            while(num%5!=0):
+                num = num+1
+            if(num-grades[i]<3):
+                answer.append(num)
             else:
-                final.append(grades[i])
-    print(final)
-    return final 
+                answer.append(grades[i])
+    return answer
         
+            
 
 if __name__ == '__main__':
     fptr = open(os.environ['OUTPUT_PATH'], 'w')
